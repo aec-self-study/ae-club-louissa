@@ -1,0 +1,31 @@
+[0m13:16:30.989941 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x793f91f03fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x793f904df760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x793f904df700>]}
+
+
+============================== 13:16:30.992633 | 15a83bcd-1401-4d30-b347-1a0e83816156 ==============================
+[0m13:16:30.992633 [info ] [MainThread]: Running with dbt=1.8.9
+[0m13:16:30.993251 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/home/vscode/.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt init', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m13:16:31.006875 [warn ] [MainThread]: [ConfigFolderDirectory]: Unable to parse logging event dictionary. Failed to parse dir field: expected string or bytes-like object.. Dictionary: {'dir': PosixPath('/home/vscode/.dbt')}
+[0m13:16:31.007671 [info ] [MainThread]: Creating dbt configuration folder at 
+[0m13:23:46.140532 [debug] [MainThread]: Starter project path: /home/vscode/.local/lib/python3.10/site-packages/dbt/include/starter_project
+[0m13:23:46.147457 [info ] [MainThread]: 
+Your new dbt project "coffee_shop_louissa" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m13:23:46.148348 [info ] [MainThread]: Setting up your profile.
+[0m13:25:34.855390 [info ] [MainThread]: Profile coffee_shop_louissa written to /home/vscode/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m13:25:34.856997 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 543.9114, "process_in_blocks": "736", "process_kernel_time": 0.139591, "process_mem_max_rss": "201244", "process_out_blocks": "88", "process_user_time": 1.570181}
+[0m13:25:34.857701 [debug] [MainThread]: Command `dbt init` succeeded at 13:25:34.857579 after 543.91 seconds
+[0m13:25:34.858141 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x793f91f03fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x793f904df730>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x793f904dff70>]}
+[0m13:25:34.858570 [debug] [MainThread]: Flushing usage events

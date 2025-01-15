@@ -10,4 +10,37 @@ models:
         tests:
           - unique
           - not_null
+      - name: customer_id
+        description: "Primary key of the model"
+
+      - name: name
+        description: "The name of the customer"
+
+      - name: email
+        description: "The email address of the customer"
+
+      - name: join_date
+        description: "The date when the customer joined the coffee shop"
+
+
+      - name: status
+        description: "The status of the customer (e.g., active, inactive)"
+
+      - name: n_orders
+        description: "The number of orders placed by the customer"
+
+      - name: first_order_at
+        description: "The date of the customer's first order"
+
+
+
+  - name: monthly_customers
+    description: "This model aggregates new customers by month based on their first order."
+    columns:
+      - name: date_month
+        description: "The month when the customer placed their first order"
+
+      - name: new_customers
+        description: "The number of new customers who placed their first order in the given month"
+
 

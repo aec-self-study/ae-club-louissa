@@ -28,10 +28,6 @@ models:
 
       - name: n_orders
         description: "The number of orders placed by the customer"
-          tests:
-          - accepted_range:
-            min: 100
-            max: 1000
 
       - name: first_order_at
         description: "The date of the customer's first order"

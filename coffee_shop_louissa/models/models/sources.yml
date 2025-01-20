@@ -1,10 +1,9 @@
 version: 2
  
 sources:
-  - name: dbt_louissa
+  - name: source_raw
     project: aec-students
     tables:
-      - name: source_customers
+      - name: customers
         columns:
           - name: customer_id
-

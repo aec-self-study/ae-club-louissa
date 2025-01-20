@@ -3,7 +3,11 @@ version: 2
 sources:
   - name: source_raw
     project: aec-students
+    dataset: dbt_louissa  # Hier den Unterordner als Dataset angeben
     tables:
       - name: customers
         columns:
           - name: customer_id
+            tests:
+              - unique
+              - not_null          

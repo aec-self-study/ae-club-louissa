@@ -6,7 +6,7 @@ models:
     description: Cleaned up data for our customers
     columns:
       - name: customer_id
-        description: Primary key of the model
+        description: "{{ doc('customers_doc') }}"
         tests:
           - unique
           - not_null

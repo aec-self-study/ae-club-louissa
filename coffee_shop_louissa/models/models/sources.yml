@@ -10,4 +10,8 @@ sources:
           - name: customer_id
             tests:
               - unique
-              - not_null          
+              - not_null   
+          - name: name
+          - name: email
+          - name: n_orders
+          - name: first_order_at  

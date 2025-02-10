@@ -6,9 +6,8 @@ with source as (
 
 renamed as(
 
-   select 
-   customer_id
-   from source
+   select *
+      from source
 ) 
 
 select* from renamed

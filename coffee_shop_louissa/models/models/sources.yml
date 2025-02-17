@@ -42,6 +42,23 @@ sources:
           - name: name
           - name: email
 
+  - name: source_sample_data
+    project: analytics-engineers-club
+    dataset: sample_data_models_obt  # Hier den Unterordner als Dataset angeben
+    tables:
+      - name: order_items
+        columns:
+          - name: order_id
+          - name: product_id
+          - name: customer_id
+          - name: product_name
+          - name: product_category
+          - name: customer_name
+          - name: customer_email
+          - name: order_stat
+          - name: sold_at
+          - name: price
+
   - name: source_web_tracking
     project: analytics-engineers-club
     dataset: web_tracking  # Hier den Unterordner als Dataset angeben

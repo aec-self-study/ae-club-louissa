@@ -16,7 +16,7 @@ sources:
           - name: n_orders
           - name: first_order_at 
 
-  - name: source_coffe_shop
+  - name: source_coffee_shop
     project: analytics-engineers-club
     dataset: coffee_shop  # Hier den Unterordner als Dataset angeben
     tables:
@@ -26,9 +26,6 @@ sources:
           - name: order_id
           - name: product_id
 
-    project: analytics-engineers-club
-    dataset: coffee_shop  # Hier den Unterordner als Dataset angeben
-    tables:
       - name: orders
         columns:
           - name: id
@@ -38,6 +35,12 @@ sources:
           - name: address
           - name: state
           - name: zip
+
+      - name: customers
+        columns:
+          - name: id
+          - name: name
+          - name: email
 
   - name: source_web_tracking
     project: analytics-engineers-club

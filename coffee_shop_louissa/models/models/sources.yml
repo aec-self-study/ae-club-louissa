@@ -14,4 +14,40 @@ sources:
           - name: name
           - name: email
           - name: n_orders
-          - name: first_order_at  
+          - name: first_order_at 
+
+  - name: source_coffe_shop
+    project: analytics-engineers-club
+    dataset: coffee_shop  # Hier den Unterordner als Dataset angeben
+    tables:
+      - name: order_items
+        columns:
+          - name: id
+          - name: order_id
+          - name: product_id
+
+    project: analytics-engineers-club
+    dataset: coffee_shop  # Hier den Unterordner als Dataset angeben
+    tables:
+      - name: orders
+        columns:
+          - name: id
+          - name: created_at
+          - name: customer_id
+          - name: total
+          - name: address
+          - name: state
+          - name: zip
+
+  - name: source_web_tracking
+    project: analytics-engineers-club
+    dataset: web_tracking  # Hier den Unterordner als Dataset angeben
+    tables:
+      - name: pageviews
+        columns:
+          - name: id
+          - name: visitor_id
+          - name: device_type
+          - name: timestamp
+          - name: page
+          - name: customer_id

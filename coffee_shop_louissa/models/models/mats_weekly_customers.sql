@@ -20,7 +20,7 @@ customer_type AS (
         w.week,
         w.customer_id,
         CASE
-            WHEN w.week = f.first_order_week THEN 'new'
+            WHEN TIMESTAMP(w.week) = f.first_order_week THEN 'new'
             ELSE 'returning'
         END AS customer_status,
         w.revenue

@@ -41,6 +41,20 @@ sources:
           - name: id
           - name: name
           - name: email
+      
+      - name: product_prices
+        data_tests:
+          - dbt_utils.mutually_exclusive_ranges:
+              lower_bound_column: created_at
+              upper_bound_column: ended_at
+              partition_by: product_id
+              gaps: not_allowed
+        columns:
+          - name: id
+          - name: product_id
+          - name: price
+          - name: created_at
+          - name: endet_at 
 
   - name: source_sample_data
     project: analytics-engineers-club

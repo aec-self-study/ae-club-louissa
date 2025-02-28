@@ -85,3 +85,70 @@ sources:
           - name: timestamp
           - name: page
           - name: customer_id
+
+  - name: github
+    project: analytics-engineers-club
+    dataset: gihub
+    tables: 
+      - name: issue
+        columns:
+          - name: id
+          - name: _fivetran_synced
+          - name: body
+          - name: closed_at
+          - name: created_at
+          - name: locked
+          - name: milestone_id
+          - name: number
+          - name: pull_request
+          - name: repository_id
+          - name: state
+          - name: title
+          - name: updated_at
+          - name: user_id
+          
+      - name: pull_request
+        columns: 
+          - name: id
+          - name: _fivetran_synced
+          - name: base_label
+          - name: base_ref
+          - name: base_repo_id
+          - name: base_sha
+          - name: base_user_id
+          - name: draft
+          - name: head_label
+          - name: head_ref
+          - name: head_repo_id
+          - name: head_sha
+          - name: head_user_id
+          - name: issue_id
+          - name: merge_commit_sha
+
+      - name: issue_merged
+        columns: 
+          - name: commit_sha
+          - name: issue_id
+          - name: merged_at
+          - name: _fivetran_synced
+          - name: actor_id
+
+      - name: repository
+        columns:
+          - name: id
+          - name: _fivetran_syned
+          - name: archived
+          - name: created_at
+          - name: default_branch
+          - name: description
+          - name: fork
+          - name: full_name
+          - name: homepage
+          - name: language
+          - name: name
+          - name: owner_id
+          - name: private
+          - name: stargazers_count
+          
+
+

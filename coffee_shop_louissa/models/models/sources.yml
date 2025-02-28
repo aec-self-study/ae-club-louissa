@@ -88,7 +88,7 @@ sources:
 
   - name: github
     project: analytics-engineers-club
-    dataset: gihub
+    dataset: github
     tables: 
       - name: issue
         columns:

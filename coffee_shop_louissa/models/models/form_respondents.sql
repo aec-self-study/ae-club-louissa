@@ -3,7 +3,7 @@
  ) }}
  
 with events as (
-    select * from {{source('advanced_dbt_examples', 'form_events') }}
+    select * from {{source('coffee_shop', 'src_form_events') }}
  ),
  
 aggregated as (

@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
 with source as (
-   select* from {{ source('source_coffee_shop', 'order_items')}}
+   select* from {{ source('coffee_shop', 'src_order_items')}}
 ),
 
 renamed as(

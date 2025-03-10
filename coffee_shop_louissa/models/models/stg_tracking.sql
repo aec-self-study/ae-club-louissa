@@ -1,7 +1,7 @@
 {{ config(materialized='table') }}
 
 with source as (
-   select* from {{ source('source_web_tracking', 'pageviews')}}
+   select* from {{ source('coffee_shop', 'src_pageviews')}}
 ),
 
 renamed as(

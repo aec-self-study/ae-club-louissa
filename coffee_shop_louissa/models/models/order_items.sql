@@ -2,7 +2,7 @@
 
 with order_items as (
   select*
-  from `analytics-engineers-club.coffee_shop.order_items` 
+  from {{ref('stg_order_items')}}
 ),
 
 renamed as(

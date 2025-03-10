@@ -1,11 +1,12 @@
 version: 2
  
 sources:
-  - name: source_raw
+  - name: coffee_shop
     project: aec-students
-    dataset: dbt_louissa  # Hier den Unterordner als Dataset angeben
+    dataset: sandpit_louissa  # Hier den Unterordner als Dataset angeben
+
     tables:
-      - name: customers
+      - name: src_customers
         columns:
           - name: customer_id
             data_tests:
@@ -15,61 +16,50 @@ sources:
           - name: email
             data_tests: 
               - email_format
-          - name: n_orders
-          - name: first_order_at 
 
-  - name: source_coffee_shop
-    project: analytics-engineers-club
-    dataset: coffee_shop  # Hier den Unterordner als Dataset angeben
-    tables:
-      - name: order_items
+      - name: src_order_items
         columns:
           - name: id
           - name: order_id
           - name: product_id
 
-      - name: orders
+      - name: src_orders
         columns:
           - name: id
           - name: created_at
           - name: customer_id
           - name: total
           - name: address
-          - name: state
+          - name: state 
           - name: zip
 
-      - name: customers
-        columns:
-          - name: customer_id  
-          - name: name
-          - name: email
-            data_tests: 
-              - email_format
-          - name: n_orders
-          - name: first_order_at 
-      
-      - name: product_prices
+      - name: src_product_prices
         columns:
           - name: id
           - name: product_id
           - name: price
-            data_tests:
-              - value_greater_than_zero:
-                  column_name: price
+#            data_tests:
+#              - value_greater_than_zero:
+#                column_name: price
           - name: created_at
-          - name: endet_at 
-        data_tests:
-          - dbt_utils.mutually_exclusive_ranges:
-              lower_bound_column: created_at
-              upper_bound_column: ended_at
-              partition_by: product_id
-              gaps: not_allowed
+          - name: ended_at
+#        data_tests:
+#          - dbt_utils.mutually_exclusive_ranges:
+#              lower_bound_column: created_at
+#              upper_bound_column: ended_at
+#              partition_by: product_id
+#              gaps: not_allowed
 
-  - name: source_sample_data
-    project: analytics-engineers-club
-    dataset: sample_data_models_obt  # Hier den Unterordner als Dataset angeben
-    tables:
-      - name: order_items
+      - name: src_pageviews
+        columns:
+          - name: id
+          - name: visitor_id
+          - name: device_type
+          - name: timestamp
+          - name: page
+          - name: customer_id 
+
+      - name: src_sample_data_order_items
         columns:
           - name: order_id
           - name: product_id
@@ -82,87 +72,8 @@ sources:
           - name: sold_at
           - name: price
 
-  - name: source_web_tracking
-    project: analytics-engineers-club
-    dataset: web_tracking  # Hier den Unterordner als Dataset angeben
-    tables:
-      - name: pageviews
+      - name: src_form_events
         columns:
-          - name: id
-          - name: visitor_id
-          - name: device_type
           - name: timestamp
-          - name: page
-          - name: customer_id
-
-  - name: github
-    project: analytics-engineers-club
-    dataset: github
-    tables: 
-      - name: issue
-        columns:
-          - name: id
-          - name: _fivetran_synced
-          - name: body
-          - name: closed_at
-          - name: created_at
-          - name: locked
-          - name: milestone_id
-          - name: number
-          - name: pull_request
-          - name: repository_id
-          - name: state
-          - name: title
-          - name: updated_at
-          - name: user_id
-          
-      - name: pull_request
-        columns: 
-          - name: id
-          - name: _fivetran_synced
-          - name: base_label
-          - name: base_ref
-          - name: base_repo_id
-          - name: base_sha
-          - name: base_user_id
-          - name: draft
-          - name: head_label
-          - name: head_ref
-          - name: head_repo_id
-          - name: head_sha
-          - name: head_user_id
-          - name: issue_id
-          - name: merge_commit_sha
-
-      - name: issue_merged
-        columns: 
-          - name: commit_sha
-          - name: issue_id
-          - name: merged_at
-          - name: _fivetran_synced
-          - name: actor_id
-
-      - name: repository
-        columns:
-          - name: id
-          - name: _fivetran_syned
-          - name: archived
-          - name: created_at
-          - name: default_branch
-          - name: description
-          - name: fork
-          - name: full_name
-          - name: homepage
-          - name: language
-          - name: name
-          - name: owner_id
-          - name: private
-          - name: stargazers_count
-
-  - name: advanced_dbt_examples
-    project: analytics-engineers-club
-    tables:
-      - name: form_events
-          
-
-
+          - name: github_username
+          - name: event

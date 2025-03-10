@@ -1,7 +1,7 @@
 
 with source as (
 
-    select * from {{ source('source_coffee_shop', 'product_prices') }}
+    select * from {{ source('coffee_shop', 'src_product_prices') }}
 
 ),
 

@@ -8,11 +8,13 @@ sources:
       - name: customers
         columns:
           - name: customer_id
-            tests:
+            data_tests:
               - unique
               - not_null   
           - name: name
           - name: email
+            data_tests: 
+              - email_format
           - name: n_orders
           - name: first_order_at 
 
@@ -38,23 +40,30 @@ sources:
 
       - name: customers
         columns:
-          - name: id
+          - name: customer_id  
           - name: name
           - name: email
+            data_tests: 
+              - email_format
+          - name: n_orders
+          - name: first_order_at 
       
       - name: product_prices
+        columns:
+          - name: id
+          - name: product_id
+          - name: price
+            data_tests:
+              - value_greater_than_zero:
+                  column_name: price
+          - name: created_at
+          - name: endet_at 
         data_tests:
           - dbt_utils.mutually_exclusive_ranges:
               lower_bound_column: created_at
               upper_bound_column: ended_at
               partition_by: product_id
               gaps: not_allowed
-        columns:
-          - name: id
-          - name: product_id
-          - name: price
-          - name: created_at
-          - name: endet_at 
 
   - name: source_sample_data
     project: analytics-engineers-club
@@ -149,6 +158,11 @@ sources:
           - name: owner_id
           - name: private
           - name: stargazers_count
+
+  - name: advanced_dbt_examples
+    project: analytics-engineers-club
+    tables:
+      - name: form_events
           
 
 
